@@ -26,12 +26,14 @@ public class BatmanScene extends Scene{
 
     @Override
     public void paint(Graphics g) {
-
+        batman.paint(g);
+        joker.paint(g);
     }
 
     @Override
     public void update() {
-
+        batman.update();
+        joker.update();
     }
 
     @Override
@@ -41,6 +43,21 @@ public class BatmanScene extends Scene{
 
     @Override
     public CommandSolver.KeyListener keyListener() {
-        return null;
+        return new CommandSolver.KeyListener() {
+            @Override
+            public void keyPressed(int commandCode, long trigTime) {
+                batman.keyPressed(commandCode, trigTime);
+            }
+
+            @Override
+            public void keyReleased(int commandCode, long trigTime) {
+
+            }
+
+            @Override
+            public void keyTyped(char c, long trigTime) {
+
+            }
+        };
     }
 }

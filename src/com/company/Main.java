@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.gameObj.GameObject;
 import com.company.gametest9th.utils.GameKernel;
 
 import javax.swing.*;
@@ -20,10 +21,13 @@ public class Main {
         //        LEFT(1),
         //        RIGHT(2);
         int[][] commands = {
-                {KeyEvent.VK_A, 1},
-                {KeyEvent.VK_W, 3},
-                {KeyEvent.VK_S, 0},
-                {KeyEvent.VK_D, 2},
+//                {KeyEvent.VK_A, 1},
+//                {KeyEvent.VK_W, 3},
+//                {KeyEvent.VK_S, 0},
+//                {KeyEvent.VK_D, 2},
+                {KeyEvent.VK_LEFT, Global.LEFT},
+                {KeyEvent.VK_RIGHT, Global.RIGHT},
+                {KeyEvent.VK_SPACE, Global.SPACE},
 //                {KeyEvent.VK_SPACE, Global.COMMAND_SPACE}
         };
 

@@ -8,10 +8,13 @@ import com.company.gametest9th.utils.GameKernel;
 import com.company.gametest9th.utils.Path;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.security.Key;
 
 public class Batman extends GameObject implements GameKernel.GameInterface, CommandSolver.KeyListener {
     private Image img;
     private Global.Direction dir;
+    private int SPEED = 15;
 
     public Batman(int x, int y){
         super(x,y, 55, 55, x, y, 50, 50);
@@ -26,7 +29,13 @@ public class Batman extends GameObject implements GameKernel.GameInterface, Comm
 
     @Override
     public void keyPressed(int commandCode, long trigTime) {
-
+        System.out.println(commandCode);
+        if(commandCode == KeyEvent.VK_LEFT && !touchLeft()){
+            translateX(-1*SPEED);
+        }
+        if(commandCode == KeyEvent.VK_RIGHT && !touchRight()){
+            translateX(SPEED);
+        }
     }
 
     @Override

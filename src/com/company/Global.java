@@ -1,12 +1,22 @@
 package com.company;
 
+import java.util.List;
+
 public class Global {
 
     public enum Direction {
         UP,
         DOWN,
         LEFT,
-        RIGHT
+        RIGHT;
+        private static  List<Direction> DIRECTIONS = List.of(values());
+        private static Direction getDirectionByIndex(int idx){
+            return DIRECTIONS.get(idx);
+        }
+        public static Direction getRandomLeftRight(){
+            int dir = Global.random(2,3);
+            return getDirectionByIndex(dir);
+        }
     }
 
     public static final boolean IS_DEBUG = true;
@@ -22,6 +32,10 @@ public class Global {
     public static final int WINDOW_HEIGHT = 600;
     public static final int SCREEN_X = WINDOW_WIDTH - 8 - 8;
     public static final int SCREEN_Y = WINDOW_HEIGHT - 31 - 8;
+
+    public static final int LEFT = 1;
+    public static final int RIGHT = 2;
+    public static final int SPACE = 3;
 
     /**
      * 輸出範圍內的隨機數字
